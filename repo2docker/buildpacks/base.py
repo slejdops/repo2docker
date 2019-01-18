@@ -110,7 +110,7 @@ WORKDIR ${REPO_DIR}
 #
 # The XDG standard suggests ~/.local/bin as the path for local user-specific
 # installs. See https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
-ENV PATH ${HOME}/.local/bin:${REPO_DIR}/.local/bin:${PATH}
+ENV PATH ${HOME}:${HOME}/.local/bin:${REPO_DIR}/.local/bin:${PATH}
 
 # Copy and chown stuff. This doubles the size of the repo, because
 # you can't actually copy as USER, only as root! Thanks, Docker!
