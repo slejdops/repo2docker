@@ -153,7 +153,8 @@ RUN ./{{ s }}
 # Add start script
 {% if start_script is not none -%}
 RUN chmod +x "{{ start_script }}"
-ENTRYPOINT ["tini", "-vvv", "--", "pwd"]
+ENTRYPOINT ["{{ start_script }}"]
+#ENTRYPOINT ["tini", "-vvv", "--", "pwd"]
 {% endif -%}
 
 # Specify the default command to run
