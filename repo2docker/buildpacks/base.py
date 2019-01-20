@@ -10,7 +10,7 @@ import sys
 import xml.etree.ElementTree as ET
 
 TEMPLATE = r"""
-FROM buildpack-deps:bionic
+FROM jupyter/base-notebook:87210526f381
 
 # avoid prompts from apt
 ENV DEBIAN_FRONTEND=noninteractive
