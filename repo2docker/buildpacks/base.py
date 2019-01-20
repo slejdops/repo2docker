@@ -153,9 +153,9 @@ RUN ./{{ s }}
 # Add start script
 {% if start_script is not none -%}
 RUN chmod +x "{{ start_script }}"
-ENTRYPOINT ["/home/jovyan/start"]
+#ENTRYPOINT ["/home/jovyan/start"]
 #ENTRYPOINT ["{{ start_script }}"]
-#ENTRYPOINT ["tini", "-vvv", "--", "pwd"]
+ENTRYPOINT ["tini", "-g", "--"]
 {% endif -%}
 
 # Specify the default command to run
