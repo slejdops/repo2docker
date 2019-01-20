@@ -11,7 +11,7 @@ import xml.etree.ElementTree as ET
 
 TEMPLATE = r"""
 FROM jupyter/base-notebook:87210526f381
-
+USER root
 # avoid prompts from apt
 ENV DEBIAN_FRONTEND=noninteractive
 
