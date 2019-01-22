@@ -192,12 +192,16 @@ RUN ./{{ s }}
 {% endfor %}
 {% endif -%}
 
+WORKDIR $HOME
+
+USER ${NB_USER}
+
 # Add start script
 {% if start_script is not none -%}
 RUN chmod +x "{{ start_script }}"
-#ENTRYPOINT ["/home/jovyan/start"]
+ENTRYPOINT ["/home/jovyan/start"]
 #ENTRYPOINT ["{{ start_script }}"]
-ENTRYPOINT ["tini", "-g", "--"]
+#ENTRYPOINT ["tini", "-g", "--"]
 {% endif -%}
 
 # Specify the default command to run
